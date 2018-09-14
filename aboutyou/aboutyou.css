@@ -1,5 +1,10 @@
 body{
-    background-color: #00008B
+    background-color: linear-gradient(to top, #999966 0%, #0033cc 100%);
+    width: 320px;
+    padding: 10px;
+    border: 5px solid blue;
+    border-radius: 8px
+    margin: auto;
 }
 h2{
     font-family: 'Playfair Display SC', serif;
@@ -7,6 +12,7 @@ h2{
 }
 header{
     font-family: 'Concert One', cursive;
+     border-bottom-style: solid;
 }
 section{
 
@@ -15,8 +21,20 @@ footer{
     font-family: 'Cormorant Garamond', serif;
 }
 nav{
-
+     border: 2px solid rgb(51, 102, 255);
 }
 p{
     font-family: 'Dosis', sans-serif;
+    word-spacing: 5px;
+}
+a:link, a:visited {
+    background-color: black;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+ul{
+     list-style-type: none;
 }
