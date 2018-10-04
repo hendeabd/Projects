@@ -4,7 +4,7 @@ body{
     padding: 10px;
     border: 5px solid blue;
     border-radius: 8px
-    margin: auto;
+    margin auto;
 }
 h2{
     font-family: 'Playfair Display SC', serif;
@@ -13,9 +13,6 @@ h2{
 header{
     font-family: 'Concert One', cursive;
      border-bottom-style: solid;
-}
-section{
-
 }
 footer{
     font-family: 'Cormorant Garamond', serif;
