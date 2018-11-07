@@ -17,8 +17,8 @@
     <body>
         <!-- Create a navbar with the links displaying via the dropdown icon for small displays and horizontally for any other size display. The navbar should also contain the snith picture as the brand logo which links to the top of the page (i.e. refreshes the page). If you have questions, refer to the pictures navbar and navbar-small -->
         
-        <nav >
-            <a >
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="#">
                 <img src="https://jlaw21.github.io/Resources/snitch.png" alt="The Snitch" width=50px>
             </a>
 
@@ -27,18 +27,18 @@
             </button>
 
             <div  id="navOptions">
-                <ul >
-                    <li>
-                        <a  href="#rules">RULES</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rules">RULES</a>
                     </li>
-                    <li >
-                        <a  href="#worldcup">WORLD CUP</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#worldcup">WORLD CUP</a>
                     </li>
-                    <li >
-                        <a  href="#teams">TEAMS</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#teams">TEAMS</a>
                     </li>
-                    <li >
-                        <a  href="#us-quidditch">US QUIDDITCH</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#us-quidditch">US QUIDDITCH</a>
                     </li>
                 </ul> 
             </div>
@@ -46,7 +46,7 @@
 
         <!-- Create a carousel, but this time instead of images, three articles containing text or images are included as the carousel slides. You may format the text anyway you wish, but must use some type of Bootstrap Typography for 2+ items.-->
 
-        <section id="intro-carousel" class='container'>                                  
+        <section id="intro-carousel" class='container carousel slide contianer-fluid' 6data-ride="carousel">                                  
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
                 <li data-target="demo" data-slide-to="1"></li>
