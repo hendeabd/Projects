@@ -86,30 +86,33 @@
         <section id='rules' class='container'>
             <h1>THE RULES</h1>
             <!--TAB NAV-->
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a href="#q-overview">OVERVIEW</a>
+                    <a class="nav-link active" data-toggle="tab" href="#q-overview">OVERVIEW</a>
                 </li>
-                <li >
-                    <a  href="#q-roles">ROLES</a>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#q-roles">ROLES</a>
                 </li>
-                <li >
-                    <a  href="#q-balls">BALLS</a>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#q-balls">BALLS</a>
                 </li>
-                <li >
-                    <a  href="#q-scoring">SCORING</a>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#q-scoring">SCORING</a>
                 </li>
             </ul>
             <!-- TAB CONTENT-->
-            <div class='container-fluid'>
-            <section>
+            <div class="tab-content" >
+            <section tab-content>
+                <div id="q-overview" class="container tab-pane collapse active"><br>
                 <article id='q-overview'>
                     <p>Quidditch is a fast, dangerous, exciting game in which two teams flying on brooms compete for points scored by throwing a ball – the Quaffle – through hoops on either end of a large grassy pitch.</p>
                     <p> There are three goal posts at either ends of a field. That field is called a Quidditch pitch. There are seven players on each side: the Keeper, the Seeker, three Chasers and two Beaters. One player is also appointed as the Captain. Professional teams will also have a manager.</p>
                 </article>
+                </div>
+                <div id="q-roles" class="container tab-pane collapse"><br>
                 <article  id='q-roles'>
-                    <ul >
-                        <li ><button class='btn btn-primary'>Chasers</button></li>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><button class='btn btn-primary'>Chasers</button></li>
                         <p id='desc-chasers'>The Chasers pass the Quaffle trying to throw it through one of the three hoops.</p>
                         <li ><button class='btn btn-primary' >Keeper</button></li>
                         <p id='desc-keeper'>The Keeper is responsible for keeping the Quaffle from going through the hoops, similar to a Goalie in soccer.</p>
@@ -119,6 +122,7 @@
                         <p id='desc-seeker' >The Seeker tries to catch the Golden Snitch, and in doing so, ends the game.</p>
                     </ul>
                 </article>
+                <div id="q-balls" class="container tab-pane collapse"><br>
                 <article  id='q-balls'>
                     <ul >
                         <li ><button class='btn btn-primary '>Quaffle</button></li>
@@ -131,6 +135,7 @@
                         <p id='desc-snitch'>The Golden Snitch, commonly referred to as a Snitch, is the smallest and fastest ball in the game. </p>                        
                     </ul>
                 </article>
+                <div id="q-scoring" class="container tab-pane collapse"><br>
                 <article id='q-scoring'>
                     <p >Quaffle = 10 pts. Snitch = 150 pts.</p>
                     <p>This scoring seems unfair, but typically Quidditch is played in a series of matches, and the team with the most accumulative points at the end of the series is the winner.</p>
