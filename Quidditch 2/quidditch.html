@@ -112,27 +112,31 @@
                 <div id="q-roles" class="container tab-pane collapse"><br>
                 <article  id='q-roles'>
                     <ul class="nav nav-tabs">
-                        <li class="nav-item"><button class='btn btn-primary'>Chasers</button></li>
+                        <div class="button-group">
+                        <li class="nav-item"><button class='btn btn-primary' class="collapse">Chasers</button></li>
                         <p id='desc-chasers'>The Chasers pass the Quaffle trying to throw it through one of the three hoops.</p>
-                        <li ><button class='btn btn-primary' >Keeper</button></li>
+                        <li ><button class='btn btn-primary' data-toggle="collapse">Keeper</button></li>
                         <p id='desc-keeper'>The Keeper is responsible for keeping the Quaffle from going through the hoops, similar to a Goalie in soccer.</p>
-                        <li ><button class='btn btn-primary ' >Beaters</button></li>
+                        <li ><button class='btn btn-primary 'data-toggle="collapse" >Beaters</button></li>
                         <p id='desc-beaters' >The Beaters are equipped with large clubs, used to smack the Bludgers around, attempting to disrupt the Chasers from getting a goal.</p>
-                        <li ><button class='btn btn-primary ' >Seeker</button></li>
+                        <li ><button class='btn btn-primary 'data-toggle="collapse" >Seeker</button></li>
                         <p id='desc-seeker' >The Seeker tries to catch the Golden Snitch, and in doing so, ends the game.</p>
+                        </div>
                     </ul>
                 </article>
                 <div id="q-balls" class="container tab-pane collapse"><br>
                 <article  id='q-balls'>
+                        <div class="button-group">
                     <ul >
-                        <li ><button class='btn btn-primary '>Quaffle</button></li>
+                        <li ><button class='btn btn-primary' data-toggle="collapse">Quaffle</button></li>
                         
-                        <li><button class='btn btn-primary'  >Bludgers</button></li>
+                        <li><button class='btn btn-primary' data-toggle="collapse" >Bludgers</button></li>
                         
-                        <li ><button class='btn btn-primary ' >Golden Snitch</button></li>
+                        <li ><button class='btn btn-primary'data-toggle="collapse" >Golden Snitch</button></li>
                         <p id='desc-quaffle' >A round red seamless leather ball, 12 inches in diameter – that is, about the size of a Muggle football. The Quaffle is the ball with which Chasers score goals, and due to the nature of the game must be caught and thrown one-handed, since the player must at the same time control his or her broomstick. </p>
                         <p id='desc-bludger'>A Bludger is a round jet-black iron ball, 10 inches in diameter – that is, slightly smaller than a Quaffle. Two Bludgers are used and they attempt to unseat the player nearest to them. Beaters used clubs to hit the Bludgers towards opposing player to unseat them.</p>
-                        <p id='desc-snitch'>The Golden Snitch, commonly referred to as a Snitch, is the smallest and fastest ball in the game. </p>                        
+                        <p id='desc-snitch'>The Golden Snitch, commonly referred to as a Snitch, is the smallest and fastest ball in the game. </p>
+                    </div>                        
                     </ul>
                 </article>
                 <div id="q-scoring" class="container tab-pane collapse"><br>
@@ -152,7 +156,8 @@
             <p>The Quidditch World Cup is played every year, similar to the Muggles Olympics. However, what some may not know is that the action actually starts two years prior to the World Cup.
             </p>
             <p>Any country capable of producing a Quidditch team is allowed to play in the World Cup. The first round, or 'group round', is when all the participating teams are separated into 16 groups, and over the course of two years, play each other. The accumulated points are tallied and the winners from each group progress on to the World Cup.</p>
-            <table >
+            <table class="table">
+                <thead class="thead-dark"></thead>
                 <tr >
                     <th>Year</th>
                     <th>Teams</th>
@@ -201,61 +206,61 @@
         <section id='teams' class='container'>
             <h1>Known Teams</h1>
             <h3>Click on a team to see details.</h3>
-            <div >
-                <button type="button" class="btn btn-primary " >
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 The Teams
                 </button>
-                <div >
+                <div class="dropdown-menu">
                     <h5 >National Teams</h5>
-                        <a href="#" >Ireland</a>
-                        <a href="#" >Bulgaria</a>
-                        <a href="#" >Brazil</a>
-                        <a href="#" >USA</a>
+                        <a href="#" class="dropdown-item">Ireland</a>
+                        <a href="#" class="dropdown-item">Bulgaria</a>
+                        <a href="#" class="dropdown-item">Brazil</a>
+                        <a href="#" class="dropdown-item">USA</a>
                     <h5 >Hogwarts Teams</h5>
-                        <a href="#" >Gryffindor</a>
-                        <a href="#" >Hufflepuff</a>
-                        <a href="#" >Ravenclaw</a>
-                        <a href="#" >Slytherin</a>
+                        <a href="#" class="dropdown-item">Gryffindor</a>
+                        <a href="#" class="dropdown-item">Hufflepuff</a>
+                        <a href="#" class="dropdown-item">Ravenclaw</a>
+                        <a href="#" class="dropdown-item">Slytherin</a>
                 </div>
             </div>
-            <div id='desc-teams'>
-                <div id='Ireland'>                    
+            <div id='desc-teams' class="collapse" >
+                <div id='Ireland' data-parent="#desc-teams">                    
                     <img src='https://vignette.wikia.nocookie.net/harrypotter/images/6/68/Irelandcrest.JPG/revision/latest/scale-to-width-down/350?cb=20110529164318'>               
                     <p>The Irish National Quidditch Team are a national Quidditch team representing Ireland. They won the 1994 Quidditch World Cup, beating Bulgaria in the final. The mascots of the team are Leprechauns.</p>
                     <a href="http://harrypotter.wikia.com/wiki/Irish_National_Quidditch_team">LEARN MORE</a>               
                 </div>
-                <div id='Bulgaria'>
+                <div id='Bulgaria'class="collapse">
                     <img src='https://vignette.wikia.nocookie.net/harrypotter/images/2/2c/Bulgariacrest.JPG/revision/latest/scale-to-width-down/350?cb=20110529164032'>
                     <p>The Bulgarian National Quidditch Team is the national Quidditch team of Bulgaria. In 1994, Bulgaria reached the final of the Quidditch World Cup. Bulgarian supporters wave flags of white, green, and red, the same colours as the Bulgarian flag in the Muggle world. They reached the final of the 2002 Quidditch World Cup but lost once again. They once again reached the finals in 2014 and won, beating Brazil amungst a rush of controversy.</p>
                     <a href='http://harrypotter.wikia.com/wiki/Bulgarian_National_Quidditch_team'>LEARN MORE</a>
                 </div>
-                <div id='Brazil' >
+                <div id='Brazil' class="collapse">
                     <img src='https://vignette.wikia.nocookie.net/harrypotter/images/7/74/720px-Flag_of_Brazil.png/revision/latest/scale-to-width-down/350?cb=20091128144932'>
                     <p>The Brazilian National Quidditch team is the national Quidditch team of Brazil. Their mascots for the 2014 Quidditch World Cup final were Curupiras.</p>
                     <a href='http://harrypotter.wikia.com/wiki/Brazilian_National_Quidditch_team'>LEARN MORE</a>
                 </div>
-                <div id='USA' >
+                <div id='USA' class="collapse">
                     <img src='https://vignette.wikia.nocookie.net/harrypotter/images/a/a3/American_National_Quidditch_team.jpg/revision/latest?cb=20090409033037'>
                     <p>The U.S.A. has a basketball-style Team Special Move named The Harlem Shuffle (20 points). The name is taken from the popular No-Maj basketball team The Harlem Globetrotters, who are best known for their skilful and entertaining play involving a ball of similar size to the Quaffle, during games.</p>
                     <a href='http://harrypotter.wikia.com/wiki/American_National_Quidditch_team'>LEARN MORE</a>
                 </div>
-                <div id='Gryffindor' >
+                <div id='Gryffindor' class="collapse">
                     <img src='https://vignette.wikia.nocookie.net/harrypotter/images/d/d3/Gryffindor%E2%84%A2_Quidditch%E2%84%A2_Badge.png/revision/latest?cb=20160731003525'>
                     <p>The Gryffindor Quidditch team is the Quidditch team of Hogwarts School of Witchcraft and Wizardry's Gryffindor House. They play in robes of scarlet, their House colour. The mascot of Gryffindor House and its Quidditch team is a lion.</p>
                     <p> Interestingly, a member of the Weasley family has held every one of the positions on the team. Ginny was a Chaser and a substitute Seeker, Charlie was a Seeker, Fred and George Weasley were Beaters, and Ron was the Keeper.</p>
                     <a href='http://harrypotter.wikia.com/wiki/Gryffindor_Quidditch_team'>LEARN MORE</a>
                 </div>
-                <div id='Hufflepuff'>
+                <div id='Hufflepuff' class="collapse">
                     <img src='https://vignette.wikia.nocookie.net/harrypotter/images/b/b1/Hufflepuff%E2%84%A2_Quidditch%E2%84%A2_Badge.png/revision/latest?cb=20091129181210'>
                     <p>The Hufflepuff Quidditch team is the Quidditch team of Hogwarts School of Witchcraft and Wizardry's Hufflepuff House. They play in robes of canary yellow, their House colour. The mascot of Hufflepuff House and its Quidditch team is a badger. One known captain of the team was Cedric Diggory.</p>
                     <a href='http://harrypotter.wikia.com/wiki/Hufflepuff_Quidditch_team'>LEARN MORE</a>
                 </div>
-                <div id='Ravenclaw'>
+                <div id='Ravenclaw' class="collapse">
                     <img src='https://vignette.wikia.nocookie.net/harrypotter/images/4/4b/Ravenclaw%E2%84%A2_Quidditch%E2%84%A2_Badge.png/revision/latest?cb=20091129181211'>
                     <p>The Ravenclaw Quidditch team is one of the four house Quidditch teams at Hogwarts School of Witchcraft and Wizardry. One known captain of the Quidditch team was Roger Davies.</p>
                     <a href='http://harrypotter.wikia.com/wiki/Ravenclaw_Quidditch_team'>LEARN MORE</a>
                 </div>
-                <div id='Slytherin'>
+                <div id='Slytherin' class="collapse">
                     <img src='https://vignette.wikia.nocookie.net/harrypotter/images/5/5d/Slytherin%E2%84%A2_Quidditch%E2%84%A2_Badge.png/revision/latest?cb=20091129181212'>
                     <p>The Slytherin Quidditch team is the Quidditch team for the Hogwarts Slytherin house. Each year, they compete for the Inter-House Quidditch Cup, an award presented to the Hogwarts House team that earns the most points. Unlike the Gryffindor, Hufflepuff and Ravenclaw teams, the Slytherin team has no qualms with cheating and unsportsmanlike conduct.</p>
                     <p>It has been noted that the Slytherin team employs players of brute strength, rather then skill. An example of this is Gregory Goyle, who was given the position of Beater in his fifth year. The Slytherin team's cheers are usually very insulting, like that of Weasley is Our King.</p>
