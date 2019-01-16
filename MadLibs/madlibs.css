@@ -5,3 +5,13 @@ fieldset{
     widows: 600px;
     margin:auto;
 }
+label{
+    width: 15em;
+    float:left;
+    text-align: right;
+    padding-right: 1em;
+}
+
+input{
+    float:left
+}
