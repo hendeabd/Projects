@@ -1,5 +1,8 @@
 body{
-    font-size:24;
+    font-size:34;
+    background-image: url(download.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 fieldset{
     widows: 600px;
@@ -14,4 +17,8 @@ label{
 
 input{
     float:left
+}
+
+h1{
+    font-family: 'Aleo', serif;
 }
