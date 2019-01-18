@@ -3,6 +3,7 @@ body{
     background-image: url(download.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    text-align:center;
 }
 fieldset{
     widows: 600px;
@@ -21,4 +22,9 @@ input{
 
 h1{
     font-family: 'Aleo', serif;
+}
+output{
+    text-align:center;
+    font-size: 50em;
+    font-family: 'Timmana', sans-serif;
 }
