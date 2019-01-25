@@ -8,12 +8,14 @@ body{
 fieldset{
     widows: 600px;
     margin:auto;
+    position:center
 }
 label{
     width: 15em;
     float:left;
     text-align: right;
     padding-right: 1em;
+    position: center;
 }
 
 input{
