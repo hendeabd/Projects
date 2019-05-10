@@ -19,3 +19,12 @@
     -webkit-border-radius: 15px;
     top: 560px; left: 20px;
 }
+
+.mapzone{
+    background-color:#228B22;
+    position:absolute;
+    top:0px; 
+    left:0px;
+    width:15px;
+    height:15px;
+}
