@@ -54,3 +54,85 @@ function level1(i,j){
     }
     return false;
 }
+
+//TURRETS
+for (var k = 0; k < 5; k++){
+    var turret = document.createElement("div");
+    turret.setAttrubute("id","turret"+k);
+    turret.setAttribute("class","turret");
+    turret.style.left = TURRET_OFFSET + (TURRET_D + TURRET_GAP)*k + "px";
+    turret.style.borderColor = turretColor(turret.id);
+    turret.innerHTML = "<p>" + k + "<br /><br />$" + turretValue(turret.id) + "</p>"
+
+    //DRAG TURRETS
+    listenEvent(turret,"click",turretClick(turret));
+    document.body.appendChild(turret);
+}
+
+function turretColor(turretID){
+
+    switch(turretID){
+
+    case "turret0":
+        return "#DDA0DD";
+    case "turret1":
+        return "#0000FF"
+    case "turret2":
+        return "#008080"
+    case "turret3":
+        return "#FF4500"
+    case "turret4":
+        return "#FF0000"
+    }
+}
+
+function turretValue(turretID){
+
+    switch(turretID){
+        case "turret0":
+            return 10;
+            case "turret1":
+            return 100;
+            case "turret2":
+            return 500;
+            case "turret3":
+            return 1000;
+            case "turret4":
+            return 5000;
+    }
+}
+
+//START BUTTON
+var startbutton = document.createElement("div");
+startbutton.setAttrubute("id","startbutton");
+startbutton.setAttribute("class","startbutton");
+startbutton.innerHTML = "<p> Start! </p>";
+listenEvent(startbutton,"click",startwave);
+document.body.appendChild(startbutton);
+
+//RESET BUTTON
+var resetbutton = document.createElement("div");
+resetbutton.setAttribute("id","resetbutton");
+resetbutton.setAttribute("class","resetbutton");
+resetbutton.innerHTML = "<p> Reset </p>";
+listenEvent(resetbutton,"click",resetwave);
+document.body.appendChild(resetbutton);
+
+//STATUS BAR
+var statusbar = document.createElement("div");
+statusbar.setAttribute("id","statusbar");
+statusbar.setAttribute("calss","statusbar");
+statusbar.innerHTML = '<p> Cash: <span id="cash">$0</span> Score: <span id="score">0</span> Wave:<span id="wave">0</span> Lives: <span id="lives">0</span></p>'
+document.body.appendChild(statusbar);
+
+//MORE TURRET STUFF
+function turretClick(turret){
+    function tclick(evt){
+        if(!isRunning || is Paused){
+            return;
+        }
+        if(currentCash < turretValue(turret.id)){
+            return;
+        }
+    }
+}
