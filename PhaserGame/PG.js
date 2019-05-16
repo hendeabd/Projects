@@ -56,51 +56,30 @@ function level1(i,j){
 }
 
 //TURRETS
-for (var k = 0; k < 5; k++){
-    var turret = document.createElement("div");
-    turret.setAttrubute("id","turret"+k);
-    turret.setAttribute("class","turret");
-    turret.style.left = TURRET_OFFSET + (TURRET_D + TURRET_GAP)*k + "px";
-    turret.style.borderColor = turretColor(turret.id);
-    turret.innerHTML = "<p>" + k + "<br /><br />$" + turretValue(turret.id) + "</p>"
+var Turret = new Phaser.Class({
 
-    //DRAG TURRETS
-    listenEvent(turret,"click",turretClick(turret));
-    document.body.appendChild(turret);
-}
+    Extends: Phaser.GameObjects.Image,
+    
+    intialize:
 
-function turretColor(turretID){
-
-    switch(turretID){
-
-    case "turret0":
-        return "#DDA0DD";
-    case "turret1":
-        return "#0000FF"
-    case "turret2":
-        return "#008080"
-    case "turret3":
-        return "#FF4500"
-    case "turret4":
-        return "#FF0000"
+    function Turret(scene){
+        Phaser.GameObjects.Image.call(this, scene, 0, 0, 'sprites', 'turret');
+        this.nextTic = 0;
+    },
+    //Place Tureet to the grid
+    place
+    :function(i,j){
+        this.y = i * 64 + 64/2;
+        this.x = j * 64 + 64/2;
+        map[i][j] = 1;
+    },
+    update: function (time, delta){
+        //SHOTS 
+        if(time > this.nextTic){
+            this.nextTic = time + 1000;
+        }
     }
-}
-
-function turretValue(turretID){
-
-    switch(turretID){
-        case "turret0":
-            return 10;
-            case "turret1":
-            return 100;
-            case "turret2":
-            return 500;
-            case "turret3":
-            return 1000;
-            case "turret4":
-            return 5000;
-    }
-}
+});
 
 //START BUTTON
 var startbutton = document.createElement("div");
@@ -121,18 +100,7 @@ document.body.appendChild(resetbutton);
 //STATUS BAR
 var statusbar = document.createElement("div");
 statusbar.setAttribute("id","statusbar");
-statusbar.setAttribute("calss","statusbar");
+statusbar.setAttribute("class","statusbar");
 statusbar.innerHTML = '<p> Cash: <span id="cash">$0</span> Score: <span id="score">0</span> Wave:<span id="wave">0</span> Lives: <span id="lives">0</span></p>'
 document.body.appendChild(statusbar);
 
-//MORE TURRET STUFF
-function turretClick(turret){
-    function tclick(evt){
-        if(!isRunning || is Paused){
-            return;
-        }
-        if(currentCash < turretValue(turret.id)){
-            return;
-        }
-    }
-}
