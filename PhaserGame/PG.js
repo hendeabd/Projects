@@ -80,6 +80,46 @@ var Turret = new Phaser.Class({
         }
     }
 });
+turets = this.add.group({classType: Turret, runChildUpdate: true});
+//TURRET PLACEMENT FUNCTION
+this.input.on('pointerdown', placeTurret);
+function placeTurret(pointer){
+    var i = Math.floor(pointer.y/64);
+    var j = Math.floor(pointer.x/64);
+    if(canPlaceTurret(i, j)){
+        var turret = turrets.get();
+        if(turret){
+            turret.setActive(true);
+            turret.setVisible(true);
+            turret.place(i, j);
+        }
+    }
+}
+
+function canPlaceTurret(i, j){
+    return map[i][j] === 0;
+}
+
+var Bullet = new Phaser.Class({
+
+    Extends: Phaser.GameObjects.Image,
+
+    intialize:
+
+    function Bullet (scene){
+
+        Phaser.GameObjects.Image.call(this, scene, 0, 0, 'bullet');
+
+        this.dx = 0;
+        this.dy = 0;
+        this.lifespan = 0;
+        this.speed = Phaser.Math.GetSpeed(600,1);
+    },
+    fire: function(x,y, angle){
+        this.setActive(true);
+        this.setVisible(true);
+    }
+})
 
 //START BUTTON
 var startbutton = document.createElement("div");
