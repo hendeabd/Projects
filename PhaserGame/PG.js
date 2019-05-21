@@ -1,3 +1,19 @@
+var config = {
+    typer: Phaser.AUTO,
+    parent: 'content',
+    width: 640,
+    height: 512,
+    physics: {
+        default: 'arcade'
+    },
+    scene:{
+        key: 'main',
+        preload: preload,
+        create: create,
+        update: update
+    }
+}
+
 function cancelEvent(event){
 
     if(event.preventDefault){
@@ -115,11 +131,40 @@ var Bullet = new Phaser.Class({
         this.lifespan = 0;
         this.speed = Phaser.Math.GetSpeed(600,1);
     },
-    fire: function(x,y, angle){
-        this.setActive(true);
-        this.setVisible(true);
+    fire: function(){
+        var enemy = getEnemy(this.x, this.y, 100);
+        if(enemy){
+            var angle = Phaser.Math.Angle.Between(this.x, this.y, enemy.x, enemy.y);
+            addBullet(this.x, this.y, angle);
+            this.angle = (angle + Math.PI/2)* Phaser.Math.RAD_TO_DEG;
+        }
+    },
+
+    update:function(time,delta){
+        if(time > this.nextTic){
+            this.fire();
+            this.nextTic = time + 1000;
+        }
     }
-})
+});
+
+bullets = this.physics.add.group({classType: Bullet, runChildUpdate: true});
+
+function addBullet(x, y, angle){
+    var bullet = bullets.get();
+    if(bullet){
+        bullet.fire(x, y, angle);
+    }
+}
+
+function getEnemy(x, y, distance){
+    var enemyUnits = enemies.getChildren();
+    for(var i = 0; i < enemyUnits.length; i++){
+        if(enemyUnits[i].active && Phaser.Math.Distance.Between(x, y, enemyUnits[i].x, enemyUnits[i]))
+        return enemyUnits[i]
+    }
+    return false
+}
 
 //START BUTTON
 var startbutton = document.createElement("div");
