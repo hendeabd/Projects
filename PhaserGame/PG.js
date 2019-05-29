@@ -96,7 +96,7 @@ var Turret = new Phaser.Class({
         }
     }
 });
-turets = this.add.group({classType: Turret, runChildUpdate: true});
+turrets = this.add.group({classType: Turret, runChildUpdate: true});
 //TURRET PLACEMENT FUNCTION
 this.input.on('pointerdown', placeTurret);
 function placeTurret(pointer){
@@ -109,6 +109,32 @@ function placeTurret(pointer){
             turret.setVisible(true);
             turret.place(i, j);
         }
+    }
+}
+
+this.hp = 100
+
+receiveDamage: function(damage) {
+    this.hp -= damage;           
+    
+    // if hp drops below 0 we deactivate this enemy
+    if(this.hp <= 0) {
+        this.setActive(false);
+        this.setVisible(false);      
+    }
+}
+
+this.physics.add.overlap(enemies, bullets, damageEnemy);
+
+function damageEnemy(enemy, bullet){
+    //only if both enemy and bullet are allvie
+    if(enemy.active === true && bullet.active === true){
+        //remove bullet
+        bullet.setActive(false);
+        bullet.setVisible(false);
+
+        //decrease the enemy hp with BULLET_DAMAGE
+        enemy.receiveDamage(BULLET_DAMAGE);
     }
 }
 
@@ -164,6 +190,45 @@ function getEnemy(x, y, distance){
         return enemyUnits[i]
     }
     return false
+}
+
+//ENEMIES
+var turrets = document.querySelectorAll(".turretdrag");
+for(var i = 0; i < turrets.length; i++){
+
+    document.body.removeChild(turrets(i));
+}
+
+for(var i = 0; i < minion_count; i++){
+
+    var minion = document.createElement("div");
+    minion.setAttribute("id","minion"+i);
+    minion.setAttribute("class","minion")
+    document.body.appendChild(minion);
+    
+}
+
+var movex = new Array();
+var movey = new Array();
+
+var currentDir = new Array();
+var minion_c = 1;
+var minion_release = new Array();
+var minion_hp = new Array();
+var first_kill = new Array();
+var minions_killed = 0;
+var lives_lost = 0;
+var wave_over = false;
+
+var minions = document.getElementsByClassName('minion');
+for(var i = 0; i < minions.length; i++){
+    movex[i] = 0;
+    movey[i] = 0;
+    curretnDir[i] = MOVE_S;
+    minion_release[i] = 0;
+    minions[i].getElementsByClassName.display = "none";
+    minion_hp[i] = minionhp();
+    first_kill[i] = true;
 }
 
 //START BUTTON
