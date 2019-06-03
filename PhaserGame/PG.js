@@ -50,25 +50,21 @@ function listenEvent(eventTarget,eventType,eventHandler){
 
 //MAP AREA
 
-function level1(i,j){
-    if(
-        (i == 0 && (j >= 0 && j <= 2))
-        || (j == 2 && (i >= 0 && i < 70))
-        ||(i == 70 && (j >= 2 && j <= 28))
-        ||(j == 28 && (j >= 70 && j <= 60))
-        ||(i == 60 && (j >= 28 && j <= 5))
-        ||(j == 5 && (j >= 60 && j <= 40))
-        ||(i == 40 && (j >= 5 && j <= 25))
-        ||(j == 25 && (j >= 40 && j <= 30))
-        ||(i == 30 && (j >= 20 && j <= 25))
-        ||(j == 20 && (j >= 30 && j <= 5))
-        ||(i == 5 && (j >= 20 && j <= 10))
-        ||(j == 10 && (j >= 5 && j <= 80))
-    )
-    {
-        return true;
-    }
-    return false;
+function create() {
+    // this graphics element is only for visualization, 
+    // its not related to our path
+    var graphics = this.add.graphics();    
+    
+    // the path for our enemies
+    // parameters are the start x and y of our path
+    path = this.add.path(96, -32);
+    path.lineTo(96, 164);
+    path.lineTo(480, 164);
+    path.lineTo(480, 544);
+    
+    graphics.lineStyle(3, 0xffffff, 1);
+    // visualize the path
+    path.draw(graphics);
 }
 
 //TURRETS
@@ -114,15 +110,7 @@ function placeTurret(pointer){
 
 this.hp = 100
 
-receiveDamage: function(damage) {
-    this.hp -= damage;           
-    
-    // if hp drops below 0 we deactivate this enemy
-    if(this.hp <= 0) {
-        this.setActive(false);
-        this.setVisible(false);      
-    }
-}
+
 
 this.physics.add.overlap(enemies, bullets, damageEnemy);
 
